@@ -7,7 +7,8 @@ PRODUCT_PACKAGES += \
      PixysOTA \
      PixysSettings \
      Turbo \
-     CameraRoll
+     CameraRoll \
+     WeatherClient
 
 # Markup libs
 ifeq ($(TARGET_ARCH),arm64)
@@ -50,3 +51,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
      persist.sys.wfd.virtual=0 \
      persist.debug.wfd.enable=1 \
      persist.sys.wfd.virtual=0
+
+# Weather
+PRODUCT_COPY_FILES += \
+     vendor/pixys/prebuilt/common/etc/permissions/com.pixys.weather.client.xml:system/etc/permissions/com.pixys.weather.client.xml
